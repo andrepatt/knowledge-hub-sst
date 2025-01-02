@@ -1,7 +1,4 @@
-name: Astro Studio
-
-env:
-  ASTRO_STUDIO_APP_TOKEN: ${{secrets.ASTRO_STUDIO_APP_TOKEN }}
+name: Deploy to Azure Static Web Apps
 
 on:
   push:
@@ -11,16 +8,28 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  DB:
-    permissions:
-      contents: read
-      actions: read
-      pull-requests: write
+  build_and_deploy_job:
     runs-on: ubuntu-latest
+    name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout repository content
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 20
-      - uses: jaid/action-npm-install@v1.2.1
-      - uses: withastro/action-studio@main
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Deploy to Azure Static Web Apps
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: "/"
+          output_location: "/dist"
