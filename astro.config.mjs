@@ -8,7 +8,7 @@ import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-nomy.vercel.app",
+  site: "https://mango-flower-0edf37903.4.azurestaticapps.net/",
   integrations: [
     mdx({
       syntaxHighlight: "shiki",

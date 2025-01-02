@@ -2,8 +2,6 @@
 
 An open source application built using the latest features in Astro v4 with shadcn/ui.
 
-![blog](public/og.jpg)
-
 > **Warning**
 > This app is a work in progress. I'm building this in public. You can follow the progress on Twitter [@miickasmt](https://twitter.com/miickasmt).
 > See the roadmap below.
@@ -92,10 +90,6 @@ pnpm install
 pnpm run dev
 ```
 
-## Credit
-
-This theme is based off of the example app [Taxonomy](https://tx.shadcn.com/) of shadcn.
-
 ## License
 
-Licensed under the [MIT license](https://github.com/mickasmt/astro-nomy/blob/main/LICENSE.md).
+Licensed under the [MIT license]

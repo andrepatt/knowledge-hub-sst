@@ -4,11 +4,11 @@ export const siteConfig: SiteConfig = {
   name: "Knowledge Hub SST",
   description:
     "An modern example app built using Astro v4 & shadcn/ui. Inspired by shadcn/taxonomy.",
-  url: "https://astro-nomy.vercel.app",
-  ogImage: "https://astro-nomy.vercel.app/og.jpg",
+  url: "https://mango-flower-0edf37903.4.azurestaticapps.net/",
+  ogImage: "https://mango-flower-0edf37903.4.azurestaticapps.net//og.jpg",
   links: {
-    twitter: "https://twitter.com/miickasmt",
-    github: "https://github.com/mickasmt/astro-nomy",
+    twitter: "https://twitter.com",
+    github: "https://github.com",
   },
 };
 
