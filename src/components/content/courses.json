@@ -1,0 +1,84 @@
+[
+    {
+      "category": "Piattaforme",
+      "courses": [
+        {
+          "title": "Salesforce",
+          "href": "https://www.salesforce.com/it/learning-centre/",
+          "description": "Scopri i corsi di formazione offerti da Salesforce per approfondire le tue competenze sulla piattaforma CRM leader di mercato.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "Microsoft Power Platform",
+          "href": "https://learn.microsoft.com/it-it/training/powerplatform/",
+          "description": "Esplora i corsi gratuiti di Microsoft per apprendere come analizzare dati, creare app, automatizzare processi e sviluppare agenti virtuali con Power Platform.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "Microsoft Fabric",
+          "href": "https://learn.microsoft.com/en-us/training/paths/get-started-fabric/",
+          "description": "Accedi a risorse e corsi per comprendere e utilizzare la piattaforma dati di Microsoft, inclusi SQL Server e Azure Data Services.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "Microsoft Azure AI Services",
+          "href": "https://learn.microsoft.com/it-it/azure/ai-services/",
+          "description": "Scopri come creare applicazioni avanzate con i servizi di intelligenza artificiale di Azure attraverso documentazione e corsi dedicati.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "Google AI Platform",
+          "href": "https://cloud.google.com/ai-platform",
+          "description": "Approfondisci l'utilizzo della piattaforma AI di Google Cloud per sviluppare e gestire modelli di machine learning su larga scala.",
+          "image": "/images/blog/placeholder-3.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Linguaggi di Sviluppo",
+      "courses": [
+        {
+          "title": "Java Programming",
+          "href": "https://www.oracle.com/java/technologies/javase-jdk11-downloads.html",
+          "description": "Impara le basi e le avanzate tecniche di programmazione in Java con i corsi ufficiali di Oracle.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "Python Programming",
+          "href": "https://www.python.org/about/gettingstarted/",
+          "description": "Inizia il tuo percorso di apprendimento in Python con risorse ufficiali e tutorial per sviluppatori di tutti i livelli.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "PL/SQL Development",
+          "href": "https://www.oracle.com/database/technologies/appdev/plsql.html",
+          "description": "Approfondisci le tue competenze in PL/SQL con i materiali formativi offerti da Oracle per lo sviluppo di applicazioni database.",
+          "image": "/images/blog/placeholder-3.jpg"
+        }
+      ]
+    },
+    {
+      "category": "Database",
+      "courses": [
+        {
+          "title": "Oracle Database",
+          "href": "https://www.oracle.com/it/database/",
+          "description": "Partecipa ai corsi di Oracle per diventare un esperto nella gestione e amministrazione di Oracle Database.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "Microsoft SQL Server",
+          "href": "https://learn.microsoft.com/it-it/sql/sql-server/",
+          "description": "Scopri le risorse e i corsi offerti da Microsoft per padroneggiare SQL Server e le sue funzionalità.",
+          "image": "/images/blog/placeholder-3.jpg"
+        },
+        {
+          "title": "MongoDB",
+          "href": "https://www.mongodb.com/it-it",
+          "description": "Accedi ai materiali didattici di MongoDB per imparare a sviluppare e gestire applicazioni con questo database NoSQL.",
+          "image": "/images/blog/placeholder-3.jpg"
+        }
+      ]
+    }
+  ]
+  

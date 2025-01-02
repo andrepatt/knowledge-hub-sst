@@ -1,4 +1,4 @@
-export type NavItem = {
+lexport type NavItem = {
   title: string;
   href: string;
   disabled?: boolean;
@@ -49,8 +49,10 @@ export type MarketingConfig = {
 };
 
 export type NavMenuConfig = {
-  pagesNav: SidebarNavItem[];
-  examplesNav: SidebarNavItem[];
+  redNav: SidebarNavItem[];
+  newsNav: SidebarNavItem[];
+  courseNav: SidebarNavItem[];
+  toolNav: SidebarNavItem[];
   links: MenuItem[];
 };
 

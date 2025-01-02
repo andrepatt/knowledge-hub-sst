@@ -5,11 +5,14 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 type Props = CollectionEntry<"blog">;
-
 const post = Astro.props;
 ---
 
-<article class="group space-y-4">
+<article
+  class="group space-y-4"
+  data-blog-card
+  data-title={post.data.title} 
+>
   <a
     href={`/blog/${post.slug}/`}
     class="flex h-52 group-hover:-translate-y-2 group-hover:shadow-xl transition duration-300"

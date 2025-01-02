@@ -1,0 +1,42 @@
+---
+import ProjectHeader from "@/components/project-header.astro";
+import ProjectCard from "@/components/cards/project-card-new.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import { capitalizer } from "@/lib/utils";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allProjects = await getCollection("projects");
+  const uniqueCategories = [
+    ...new Set(allProjects.map((project) => project.data.category).flat()),
+  ];
+
+  return uniqueCategories.map((category) => {
+    const filteredProjects = allProjects
+      .filter((project) => project.data.category.includes(category))
+      .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    return {
+      params: { category },
+      props: { projects: filteredProjects },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { projects } = Astro.props;
+---
+
+<MainLayout
+  title={`${capitalizer(category)} | Blog`}
+  description={`Tutti i progetti for ${category} category`}
+>
+  <section class="container py-10">
+    <ProjectHeader title={`Progetti by ${category} category`} />
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-x-6 gap-y-9 md:gap-y-11 lg:gap-y-16 lg:gap-x-8"
+    >
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+  </section>
+</MainLayout>

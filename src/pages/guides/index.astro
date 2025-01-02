@@ -1,29 +1,49 @@
 ---
 import GuideCard from "@/components/cards/guide-card.astro";
 import DocsPageHeader from "@/components/page-header.astro";
-import DocsLayout from "@/layouts/docs-layout.astro";
+import MainLayout from "@/layouts/main-layout.astro";
 import { getGuides } from "@/lib/fetchers";
 
 const guides = await getGuides();
+
+// Filtra le guide in evidenza e quelle normali
+const featuredGuides = guides.filter((guide) => guide.data.featured);
+const otherGuides = guides.filter((guide) => !guide.data.featured);
 ---
 
-<DocsLayout title="Blog" description="Lorem ipsum dolor sit amet">
+<MainLayout title="Blog" description="Lorem ipsum dolor sit amet">
   <section class="container max-w-6xl py-10">
     <DocsPageHeader
-      heading="Guides"
-      text="This section includes end-to-end guides for developing Astro v4 apps."
+      heading="Guide e Manuali"
+      text="Scopri le nostre guide e manuali per agevolare il tuo lavoro"
     />
 
-    {
-      guides?.length ? (
-        <div class="grid gap-4 md:grid-cols-2 md:gap-6">
-          {guides.map((guide) => (
-            <GuideCard {...guide} />
+    <!-- Guide in Evidenza -->
+    {featuredGuides.length > 0 && (
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold mb-6">Guide in evidenza</h2>
+        <div class="space-y-6">
+          {featuredGuides.map((guide) => (
+            <div class="p-4 rounded-lg border-2 border-blue-500">
+              <GuideCard {...guide} />
+            </div>
           ))}
         </div>
-      ) : (
-        <p>No guides published.</p>
-      )
-    }
+      </div>
+    )}
+
+    <!-- Altre Guide -->
+    {otherGuides.length > 0 && (
+      <div>
+        <h2 class="text-2xl font-bold mb-6">Altre Guide</h2>
+        <div class="grid gap-4 md:grid-cols-2 md:gap-6">
+          {otherGuides.map((guide) => (
+            <div>
+              <GuideCard {...guide} />
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
   </section>
-</DocsLayout>
+</MainLayout>

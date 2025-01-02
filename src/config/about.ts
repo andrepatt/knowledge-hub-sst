@@ -6,51 +6,42 @@ interface HobbiesProps {
 export const hobbies: HobbiesProps[] = [
   // first column
   {
-    image:
-      "https://images.pexels.com/photos/15372903/pexels-photo-15372903/free-photo-of-computer-setup-with-big-monitor-screen.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "setup desktop",
+    image: "https://images.pexels.com/photos/256417/pexels-photo-256417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Open book with glasses",
   },
   {
-    image:
-      "https://images.pexels.com/photos/1049317/pexels-photo-1049317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "friends smiles",
+    image: "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Library shelves filled with books",
   },
   // second column
   {
-    image:
-      "https://images.pexels.com/photos/3712095/pexels-photo-3712095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "grey cat",
+    image: "https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Students studying in a library",
   },
   {
-    image:
-      "https://images.pexels.com/photos/9293249/pexels-photo-9293249.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "home building",
+    image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Person reading a book with a cup of coffee",
   },
   {
-    image:
-      "https://images.pexels.com/photos/375467/pexels-photo-375467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "pizza laptop",
+    image: "https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Stack of books on a wooden table",
   },
   // third column
   {
-    image:
-      "https://images.pexels.com/photos/1230302/pexels-photo-1230302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "hike and sunset",
+    image: "https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Person typing on a laptop surrounded by books",
   },
   {
-    image:
-      "https://images.pexels.com/photos/5500779/pexels-photo-5500779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "chinese lantern",
+    image: "https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Open book with a pen and glasses",
   },
   // fourth column
   {
-    image:
-      "https://images.pexels.com/photos/2090644/pexels-photo-2090644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "the great wheel",
+    image: "https://images.pexels.com/photos/261909/pexels-photo-261909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Bookshelf with a variety of books",
   },
   {
-    image:
-      "https://images.pexels.com/photos/7418632/pexels-photo-7418632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "dalmatian",
+    image: "https://images.pexels.com/photos/1053687/pexels-photo-1053687.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Person writing notes in a notebook",
   },
 ];

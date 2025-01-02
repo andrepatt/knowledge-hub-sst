@@ -1,0 +1,35 @@
+---
+import ProjectPostLayout from '@/layouts/project-post.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: project,
+	}));
+}
+
+type Props = CollectionEntry<'projects'>;
+
+const project = Astro.props;
+const slug = Astro.params.slug;
+const { Content } = await project.render();
+
+if (!slug || !project) {
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not found'
+  });
+}
+---
+<ProjectPostLayout {...project}>
+	<!-- Avvolgi il contenuto con data-pagefind-filter="type:blog" -->
+	<div data-pagefind-filter="type:Progetti">
+		<!-- E metti data-pagefind-body sul "contenuto" del post, -->
+		<!-- così Pagefind indicizza tutto il testo dentro <Content /> -->
+		<div data-pagefind-body>
+		  <Content />
+		</div>
+	  </div>
+</BlogPostLayout>

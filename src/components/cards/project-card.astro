@@ -1,0 +1,65 @@
+---
+import { Badge } from "@/components/ui/badge";  // opzionale
+import { formatDate } from "@/lib/utils";       // opzionale
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+// Definiamo il tipo "Props" come un post di "projects".
+type Props = CollectionEntry<"projects">;
+
+// Recuperiamo i dati dal contesto di Astro (il post con slug, data, ecc.)
+const post = Astro.props;
+---
+
+<article class="group space-y-6">
+  <!-- Link principale -->
+  <a
+    href={`/projects/${post.slug}/`}
+    class="group space-y-6"
+  >
+    <!-- Immagine con le transizioni (primo snippet) e con alt dal secondo snippet -->
+    <Image
+      loading="eager"
+      src={post.data.cover}
+      alt={post.data.title || "Immagine del progetto"}
+      width={720}
+      height={360}
+      class="aspect-[1.75] transition-all duration-800 group-hover:scale-105 rounded-lg overflow-clip object-cover"
+      transition:name={`img-${post.slug}`}
+    />
+  </a>
+
+  <!-- Contenitore titolo, descrizione, ecc. -->
+  <div class="flex flex-col gap-4">
+    <!-- Esempio: uso di "formatDate" per la data pubblicazione -->
+    <p>
+      {formatDate(post.data.pubDate)}
+    </p>
+
+    <!-- Titolo con stile del primo snippet -->
+    <h4 class="font-display text-xl font-semibold !leading-[1.25] max-sm:text-lg">
+      {post.data.title}
+    </h4>
+
+    <!-- Descrizione -->
+    <p class="text-sm text-zinc-400">
+      {post.data.description}
+    </p>
+
+    <!-- Link "Read more" con icona -->
+    <span
+      class="link-hover-animation group-hover:link-hovered-animation w-fit text-sm text-emerald-400 inline-flex items-center"
+      transition:name={"readmore-" + post.slug}
+    >
+      Read more
+      <Icon
+        name="lucide:arrow-right"
+        class="ml-1 inline-block transition-all duration-300 group-hover:ml-2"
+      />
+    </span>
+  </div>
+</article>
+
+<!-- Stile personalizzato (come nel primo snippet) -->
+<style define:vars={{ offsetEnd: '24px' }}></style>

@@ -1,0 +1,68 @@
+---
+import { Card } from "@/components/ui/card"
+import { BookOpen, Users, PenToolIcon as Tool, Zap, Database, Cloud, Lock, Settings } from 'lucide-react'
+
+const categories = [
+  {
+    title: "Documentazione Tecnica",
+    description: "Guide dettagliate, standard e best practices per lo sviluppo",
+    icon: BookOpen,
+    items: ["API Documentation", "Standard di Sviluppo", "Best Practices"]
+  },
+  {
+    title: "Architettura",
+    description: "Mappa applicativa e architettura dei sistemi SSD",
+    icon: Database,
+    items: ["Mappa Applicativa", "Diagrammi di Sistema", "Integrazioni"]
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Risorse per cloud, CI/CD e strumenti DevOps",
+    icon: Cloud,
+    items: ["AWS Guide", "Pipeline CI/CD", "Monitoring"]
+  },
+  {
+    title: "Sicurezza",
+    description: "Linee guida per la sicurezza e compliance",
+    icon: Lock,
+    items: ["Security Policies", "Access Management", "Compliance"]
+  },
+]
+---
+
+<div class="py-24 bg-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <h2 class="text-3xl font-bold tracking-tight text-white">Esplora le Nostre Risorse</h2>
+      <p class="text-zinc-400 text-lg">
+        Tutto ciò di cui hai bisogno per sviluppare, dalla documentazione agli strumenti
+      </p>
+    </div>
+    
+    <div class="grid sm:grid-cols-2 gap-6">
+      {categories.map((category) => (
+        <Card className="group hover:shadow-lg transition-all duration-300 cursor-pointer bg-white">
+          <div class="p-6 space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-zinc-100 flex items-center justify-center">
+                <category.icon className="w-6 h-6 text-[#003DA5]" />
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">{category.title}</h3>
+                <p class="text-sm text-muted-foreground mt-1">{category.description}</p>
+              </div>
+            </div>
+            <ul class="space-y-2">
+              {category.items.map((item) => (
+                <li class="flex items-center gap-2 text-sm text-muted-foreground">
+                  <div class="w-1 h-1 rounded-full bg-[#003DA5]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>

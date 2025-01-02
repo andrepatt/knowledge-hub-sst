@@ -1,136 +1,131 @@
 import type { InfoLdg } from "@/types";
 
 export const infos: InfoLdg[] = [
+
   {
-    title: "Empower your projects",
+    title: "Knowledge Hub: il centro delle conoscenze",
     description:
-      "Unlock the full potential of your projects with our open-source SaaS platform. Collaborate seamlessly, innovate effortlessly, and scale limitlessly.",
-    image: "/images/blog/placeholder-about.jpg",
+      "Accedi a un unico punto di riferimento per guide, manuali, standard architetturali e documentazione. Un supporto indispensabile per tutti i progetti e le attività della struttura SST.",
+    image: "/images/blog/placeholder-2.jpg",
     list: [
       {
-        title: "Collaborative",
-        description: "Work together with your team members in real-time.",
+        title: "Guide e Manuali",
+        description: "Consulta le guide pratiche e i manuali per tutte le attività aziendali.",
         icon: "lucide:laptop",
       },
       {
-        title: "Innovative",
-        description: "Stay ahead of the curve with access constant updates.",
+        title: "Standard Condivisi",
+        description: "Trova gli standard architetturali e metodologici utilizzati dalla struttura.",
         icon: "lucide:settings",
       },
       {
-        title: "Scalable",
-        description:
-          "Our platform offers the scalability needed to adapt to your needs.",
+        title: "Documentazione Centralizzata",
+        description: "Organizza e accedi facilmente alla documentazione di tutti i progetti.",
         icon: "lucide:search",
       },
     ],
   },
   {
-    title: "Seamless Integration",
+    title: "Strumenti e Risorse per ogni necessità",
     description:
-      "Integrate our open-source SaaS seamlessly into your existing workflows. Effortlessly connect with your favorite tools and services for a streamlined experience.",
-    image: "/images/blog/placeholder-about.jpg",
+      "Scopri strumenti, collegamenti e tecnologie utili per il lavoro quotidiano. Accesso diretto a tool di AI e Gen AI, link essenziali e template per ottimizzare i flussi di lavoro.",
+    image: "/images/blog/placeholder-3.jpg",
     list: [
       {
-        title: "Flexible",
-        description:
-          "Customize your integrations to fit your unique requirements.",
-        icon: "lucide:laptop",
-      },
-      {
-        title: "Efficient",
-        description: "Streamline your processes and reducing manual effort.",
-        icon: "lucide:search",
-      },
-      {
-        title: "Reliable",
-        description:
-          "Rely on our robust infrastructure and comprehensive documentation.",
+        title: "Strumenti AI/Gen AI",
+        description: "Utilizza i migliori strumenti di intelligenza artificiale per i tuoi progetti.",
         icon: "lucide:settings",
+      },
+      {
+        title: "Link Utili",
+        description: "Trova velocemente i collegamenti ai sistemi e alle risorse aziendali.",
+        icon: "lucide:link",
+      },
+      {
+        title: "Template e Librerie",
+        description: "Accedi a modelli predefiniti e librerie per velocizzare il lavoro.",
+        icon: "lucide:layers",
       },
     ],
   },
 ];
 
+
 export const features = [
   {
-    title: "Feature 1",
-    description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
+    title: "Gestione Progetti",
+    description: "Strumenti e risorse per la gestion dei progetti.",
+    link: "#",
   },
   {
-    title: "Feature 2",
-    description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
+    title: "Standard Architetturali",
+    description: "Linee guida per progettare e sviluppare soluzioni scalabili e sicure.",
+    link: "#",
   },
   {
-    title: "Feature 3",
-    description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
+    title: "Mappa Applicativa",
+    description: "Visualizza tutte le applicazioni sviluppate da SST.",
+    link: "#",
   },
   {
-    title: "Feature 4",
-    description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
+    title: "Piattaforme Tecnologiche",
+    description: "Tecnologie e framework utilizzati nei progetti della struttura.",
+    link: "#",
   },
   {
-    title: "Feature 5",
-    description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
+    title: "Formazione e Certificazioni",
+    description: "Approfondisci competenze tecniche con corsi e tutorial dedicati.",
+    link: "#",
   },
   {
-    title: "Feature 6",
-    description:
-      "Amet praesentium deserunt ex commodi tempore fuga voluptatem. Sit, sapiente.",
-    link: "/",
+    title: "Knowledge Base",
+    description: "Accesso rapido a guide, manuali e documentazione.",
+    link: "#",
   },
 ];
 
 export const testimonials = [
   {
-    name: "John Doe",
-    job: "Full Stack Developer",
+    name: "Valerio Mearelli",
+    job: "Responsabile Sviluppo Sistemi",
     image: "https://randomuser.me/api/portraits/men/1.jpg",
     review:
-      "The next-saas-stripe-starter repo has truly revolutionized my development workflow. With its comprehensive features and seamless integration with Stripe, I've been able to build and deploy projects faster than ever before. The documentation is clear and concise, making it easy to navigate through the setup process. I highly recommend next-saas-stripe-starter to any developer.",
+      "Grazie alla knowledge base SST, tutto è finalmente al suo posto. Ora mi chiedo solo: perché non ci abbiamo pensato prima?",
   },
+
   {
-    name: "Alice Smith",
-    job: "UI/UX Designer",
-    image: "https://randomuser.me/api/portraits/women/2.jpg",
-    review:
-      "Thanks to next-saas-stripe-starter, I've been able to create modern and attractive user interfaces in record time. The starter kit provides a solid foundation for building sleek and intuitive designs, allowing me to focus more on the creative aspects of my work.",
-  },
-  {
-    name: "David Johnson",
-    job: "DevOps Engineer",
+    name: "Valerio Borrelli",
+    job: "PM TSP",
     image: "https://randomuser.me/api/portraits/men/3.jpg",
     review:
-      "Thanks to next-saas-stripe-starter, I was able to streamline the entire process and get payments up and running in no time.",
+      "Con la knowledge base SST tutto è così organizzato che il vero problema ora è trovare una scusa per non essere super efficiente.",
   },
   {
-    name: "Michael Wilson",
-    job: "Project Manager",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    name: "Luca Bianchi",
+    job: "Architetto IT",
+    image: "https://randomuser.me/api/portraits/women/2.jpg",
     review:
-      "I'm impressed by the quality of code and clear documentation of next-saas-stripe-starter. Kudos to the team!",
+      "La mappa applicativa di SST è uno strumento fantastico per avere una visione chiara delle interconnessioni tra i sistemi aziendali.",
   },
   {
-    name: "Sophia Garcia",
-    job: "Data Analyst",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-    review:
-      "next-saas-stripe-starter provided me with the tools I needed to efficiently manage user data. Thank you so much!",
-  },
-  {
-    name: "Emily Brown",
-    job: "Marketing Manager",
+    name: "Alessia Conti",
+    job: "Analista Funzionale",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
     review:
-      "next-saas-stripe-starter has been an invaluable asset in my role as a marketing manager. With its seamless integration with Stripe, I've been able to launch targeted marketing campaigns with built-in payment functionality, allowing us to monetize our products and services more effectively.",
+      "La sezione 'Piattaforme Tecnologiche' ci ha permesso di scegliere le tecnologie giuste per i nostri nuovi progetti senza dover reinventare la ruota.",
+  },
+  {
+    name: "Marco Esposito",
+    job: "Responsabile Progetto",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    review:
+      "La struttura della knowledge base ci ha aiutato a migliorare il coordinamento con altre divisioni, rendendo i progetti più fluidi.",
+  },
+  {
+    name: "Francesca Ricci",
+    job: "Data Scientist",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    review:
+      "Finalmente un posto dove trovare guide e strumenti per lavorare sui nostri progetti di analisi dati in modo efficace.",
   },
 ];

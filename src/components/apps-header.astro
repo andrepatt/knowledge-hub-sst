@@ -1,0 +1,85 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { getAppsCategories } from "@/lib/fetchers";
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+
+const categories = await getAppsCategories();
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+const { category } = Astro.params;
+---
+
+<h1 class="inline-block font-heading text-4xl">Applicazioni SST</h1>
+
+<div class="flex items-start justify-between my-6 max-md:gap-4">
+  <div class="flex items-center lg:w-full max-w-xs h-10 rounded-md px-2 lg:px-3 border text-muted-foreground relative">
+    <Icon name="ri:search-line" class="size-5 text-gray-500" />
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Cerca per nome..."
+      class="ml-2 hidden lg:flex bg-transparent outline-none w-full text-sm"
+    />
+  </div>
+
+  {
+    categories?.length ? (
+      <ul class="flex snap-x snap-mandatory overflow-auto items-center space-x-2 lg:space-x-2.5 pb-2">
+        <li class="flex-shrink-0 snap-start">
+          <a
+            href={`/apps`}
+            class={cn(
+              !category ? "select-none" : "",
+              buttonVariants({
+                variant: !category ? "default" : "outline",
+              })
+            )}
+          >
+            Tutte le App
+          </a>
+        </li>
+        {categories.map((item) => (
+          <li class="flex-shrink-0 snap-start">
+            <a
+              href={`/apps/category/${item}`}
+              class={cn(
+                "capitalize",
+                item === category ? "select-none" : "",
+                buttonVariants({
+                  variant: item === category ? "default" : "outline",
+                })
+              )}
+            >
+              {item}
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <div />
+    )
+  }
+</div>
+
+<hr class="mb-7" />
+
+<!-- Script per filtrare per titolo -->
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('#searchInput');
+    const blogCards = document.querySelectorAll('[data-apps-card]');
+    
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      blogCards.forEach((card) => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        card.style.display = title.includes(query) ? '' : 'none';
+      });
+    });
+  });
+</script>

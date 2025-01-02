@@ -1,0 +1,129 @@
+---
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/site";
+---
+
+<section class="relative py-10 sm:py-14 lg:py-16 overflow-hidden">
+    <!-- Gradient Background -->
+    <div
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 grid grid-cols-2 -space-x-52 opacity-40"
+    >
+        <div class="blur-[60px] h-36 bg-gradient-to-br from-[#006fb1] to-[#2f8a81]">
+        </div>
+        <div class="blur-[60px] h-24 bg-gradient-to-r from-[#3d4f96] to-[#006fb1]">
+        </div>
+    </div>
+
+    <div class="container px-4 md:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <!-- Content Column -->
+            <div class="flex flex-col items-start gap-6 text-left">
+                <a
+                    href="/releases"
+                    class={cn(
+                        buttonVariants({ variant: "outline", size: "sm", rounded: "full" }),
+                        "px-3",
+                    )}
+                    target="_blank"
+                >
+                    <span class="mr-2">📢</span> Launching Soon !
+                    <!-- <Icon name="twitter" class="ml-2 size-2.5" /> -->
+                </a>
+
+                <h1
+                    class="text-balance font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                >
+                    Esplora il{" "}
+                    <span class="text-gradient_blue-green font-extrabold">
+                        Knowledge Hub
+                    </span>{" "}
+                    SST
+                </h1>
+
+                <div class="space-y-3 max-w-md">
+                    <p class="text-balance leading-normal text-muted-foreground sm:text-base sm:leading-7">
+                        Accedi a risorse, documentazione, guide e strumenti utili.
+                    </p>
+                    <p class="text-balance font-semibold text-lg pt-2">
+                        Tutto in un unico posto.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 pt-6">
+                    <a
+                        href="/landing"
+                        class={cn(
+                            buttonVariants({ size: "lg", rounded: "full" }),
+                            "gap-2 bg-blue-500 text-white",
+                        )}
+                    >
+                        <span>Esplora il sito</span>
+                        <Icon name="lucide:arrow-right" class="size-4" />
+                    </a>
+                    <a
+                        href="/docs"
+                        target="_blank"
+                        rel="noreferrer"
+                        class={cn(
+                            buttonVariants({
+                                variant: "outline",
+                                size: "lg",
+                                rounded: "full",
+                            }),
+                            "px-4",
+                        )}
+                    >
+                        <span class="hidden sm:inline-block">Vai Alla Knowledge Base</span>
+                        <Icon name="lucide:arrow-right" class="ml-2 size-4" />
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image Column -->
+            <div class="relative h-[300px] w-full perspective sm:h-[350px] lg:h-[400px]">
+                <div class="image-container">
+                    <img
+                        src="/images/hero-image.png"
+                        alt="Knowledge Base Interface"
+                        class="object-cover rounded-2xl shadow-2xl w-full h-full"
+                        loading="eager"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extra padding after hero -->
+    <div class="py-6 lg:py-8"></div>
+</section>
+
+<style>
+    .text-gradient_blue-green {
+        @apply bg-gradient-to-r from-[#1e40af] to-[#10b981] bg-clip-text text-transparent;
+    }
+
+    .perspective {
+        perspective: 1000px;
+    }
+
+    .image-container {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease;
+    }
+
+    .image-container:hover {
+        transform: scale(1.05);
+    }
+
+    img {
+        transition: transform 0.3s ease;
+    }
+
+    .image-container:hover img {
+        transform: scale(1.05);
+    }
+</style>

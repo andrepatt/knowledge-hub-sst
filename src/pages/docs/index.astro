@@ -1,0 +1,115 @@
+---
+import DocsLayout from "@/layouts/main-layout.astro";
+import DocsPageHeader from "@/components/page-header.astro";
+import DocCard from "@/components/cards/doc-card.astro";
+
+// Sezioni principali
+const sections = [
+  {
+    title: "Guida all'Uso",
+    description: "Scopri come utilizzare al meglio la knowledge base con guide passo-passo.",
+    icon: "help-circle",
+    href: "/docs/help",
+  },
+  {
+    title: "Supporto e FAQ",
+    description: "Trova risposte alle domande frequenti o richiedi supporto tecnico.",
+    icon: "headphones",
+    href: "/docs/support",
+  },
+  {
+    title: "Strumenti e Template",
+    description: "Accedi a risorse, strumenti e template per semplificare il lavoro quotidiano.",
+    icon: "book-open",
+    href: "/docs/resources",
+  },
+];
+
+// Sezioni aggiuntive
+const extraSections = [
+  {
+    title: "Reperibilità",
+    description: "Trova guide tecniche dettagliate sui sistemi ed errori accaduti in passato supporto alla reperibilità.",
+    icon: "clock",
+    href: "/docs/availability",
+    label: "Risorse Utili",
+  },
+  {
+    title: "Manuali Tecnici",
+    description: "Consulta manuali dettagliati e documentazione tecnica aggiornata.",
+    icon: "book-open",
+    href: "/docs/manuals",
+    label: "Manuali",
+  },
+];
+---
+
+<DocsLayout
+  title="Knowledge Hub"
+  description="Benvenuto nella Knowledge Base. Trova documentazione, supporto e strumenti in un unico luogo per migliorare la tua esperienza lavorativa."
+>
+  <section class="container mx-auto max-w-6xl py-10 px-6">
+    {/* Intestazione della Pagina */}
+    <DocsPageHeader
+      heading="Knowledge Hub"
+      text="Benvenuto nella Knowledge Base aziendale. Qui troverai tutto il necessario per lavorare in modo efficiente e rimanere aggiornato."
+    />
+
+    {/* Link Evidente alla Home della Knowledge Base */}
+    <div class="w-full bg-gradient-to-r from-blue-500 via-teal-400 to-blue-700 text-white py-6 px-10 mb-8 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+      <a href="/docs/getting-started" class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold">Vai alla Home della Knowledge Base</h2>
+          <p class="mt-2 text-lg">Scopri tutto quello che puoi fare nella nostra Knowledge Base aziendale.</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-8 h-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </a>
+    </div>
+
+    {/* Sezione Principale */}
+    <div class="my-8 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {sections.map((section) => (
+        <DocCard
+          title={section.title}
+          description={section.description}
+          icon={section.icon}
+          href={section.href}
+          type="primary"
+        />
+      ))}
+    </div>
+
+    {/* Sezione Extra */}
+    <div class="mt-12 text-center">
+      <h1 class="text-2xl font-bold mt-16">Hai bisogno di altro?</h1>
+      <h2 class="mt-2 mb-8 text-lg text-gray-700">
+        Esplora risorse aggiuntive per trovare tutto ciò di cui hai bisogno.
+      </h2>
+      <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+        {extraSections.map((section) => (
+          <DocCard
+            title={section.title}
+            description={section.description}
+            icon={section.icon}
+            href={section.href}
+            label={section.label}
+            type="secondary"
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</DocsLayout>

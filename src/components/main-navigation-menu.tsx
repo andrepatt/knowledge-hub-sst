@@ -15,8 +15,10 @@ import { navMenuConfig } from "@/config/nav-menu";
 import type { MenuItem } from "@/types";
 
 const links = navMenuConfig.links;
-const pages = navMenuConfig.pagesNav[0];
-const examples = navMenuConfig.examplesNav[0];
+const reds = navMenuConfig.redNav[0];
+const tools = navMenuConfig.toolNav[0];
+const courses = navMenuConfig.courseNav[0];
+// const newss = navMenuConfig.newsNav[0];
 
 export function MainNavigationMenu() {
   return (
@@ -49,27 +51,18 @@ export function MainNavigationMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem> */}
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{pages.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {pages.items?.map((page) => (
-                <ListItem key={page.title} {...page} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>{examples.title}</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {examples.items?.map((example) => (
-                <ListItem key={example.title} {...example} />
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        {[reds, tools, courses].map((category) => (
+          <NavigationMenuItem key={category.title}>
+            <NavigationMenuTrigger>{category.title}</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                {category.items?.map((item) => (
+                  <ListItem key={item.title} {...item} />
+                ))}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+        ))}
 
         {links ? (
           <NavigationMenuItem>

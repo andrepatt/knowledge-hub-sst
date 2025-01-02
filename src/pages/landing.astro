@@ -1,21 +1,27 @@
 ---
-import BentoGrid from "@/components/sections/bentogrid.astro";
-import Features from "@/components/sections/features.astro";
-import HeroLanding from "@/components/sections/hero-landing.astro";
-import InfoLanding from "@/components/sections/info-landing.astro";
-import PreviewLanding from "@/components/sections/preview-landing.astro";
-import Testimonials from "@/components/sections/testimonials.astro";
-
-import { infos } from "@/config/landing";
+import ExampleGrid from "@/components/example-grid.astro";
+import PageHeader from "@/components/page-header.astro";
+import { navMenuConfig } from "@/config/nav-menu";
 import MainLayout from "@/layouts/main-layout.astro";
+
+const reds = navMenuConfig.redNav[0].items;
+const tools = navMenuConfig.toolNav[0].items;
+const courses = navMenuConfig.courseNav[0].items;
+// const news = navMenuConfig.newsNav[0].items;
 ---
 
-<MainLayout title="Landing">
-  <HeroLanding />
-  <PreviewLanding />
-  <BentoGrid />
-  <InfoLanding data={infos[0]} reverse={true} />
-  <!-- <InfoLanding data={infos[1]} /> -->
-  <Features />
-  <Testimonials />
+<MainLayout title="">
+  <div class="bg-background-200">
+    <section class="container py-12">
+      <PageHeader
+        heading="Scopri l'hub"
+        text="Knowledge Hub di Sviluppo sistemi è una piattaforma di condivisione di risorse, corsi, strumenti e notizie per il personale di sviluppo sistemi."
+      />
+
+      <ExampleGrid title="R&D" items={reds} />
+      <ExampleGrid title="Strumenti e Risorse" items={tools} />
+      <ExampleGrid title="Corsi e Formazione" items={courses} />
+      <!-- <ExampleGrid title="Notizie" items={news} /> -->
+    </section>
+  </div>
 </MainLayout>

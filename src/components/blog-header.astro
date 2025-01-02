@@ -14,14 +14,18 @@ const { title } = Astro.props;
 const { category } = Astro.params;
 ---
 
-<h1 class="inline-block font-heading text-4xl">{title}</h1>
+<h1 class="inline-block font-heading text-4xl">Notizie & Eventi</h1>
+<h2 class="text-lg text-muted-foreground mt-1">Tutte le news e gli eventi di Sviluppo Sistemi</h2>
 
 <div class="flex items-start justify-between my-6 max-md:gap-4">
-  <div
-    class="flex items-center lg:w-full max-w-xs h-10 rounded-md px-2 lg:px-3 border text-muted-foreground"
-  >
-    <Icon name="ri:search-line" class="size-5" />
-    <span class="text-sm ml-2 hidden lg:flex">Search (coming soon)</span>
+  <div class="flex items-center lg:w-full max-w-xs h-10 rounded-md px-2 lg:px-3 border text-muted-foreground relative">
+    <Icon name="ri:search-line" class="size-5 text-gray-500" />
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Cerca per titolo..."
+      class="ml-2 hidden lg:flex bg-transparent outline-none w-full text-sm"
+    />
   </div>
 
   {
@@ -37,7 +41,7 @@ const { category } = Astro.params;
               })
             )}
           >
-            All posts
+            Tutte le news
           </a>
         </li>
         {categories.map((item) => (
@@ -64,3 +68,19 @@ const { category } = Astro.params;
 </div>
 
 <hr class="mb-7" />
+
+<!-- Script per filtrare per titolo -->
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('#searchInput');
+    const blogCards = document.querySelectorAll('[data-blog-card]');
+    
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      blogCards.forEach((card) => {
+        const title = card.getAttribute('data-title').toLowerCase();
+        card.style.display = title.includes(query) ? '' : 'none';
+      });
+    });
+  });
+</script>

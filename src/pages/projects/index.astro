@@ -1,0 +1,20 @@
+---
+import ProjectHeader from "@/components/project-header.astro";
+import ProjectCard from "@/components/cards/project-card-new.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import { getProjects } from "@/lib/fetchers";
+
+const projects = await getProjects();
+---
+
+<MainLayout title="Static Blog">
+  <section class="container py-10">
+    <ProjectHeader title="Progetti" />
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-x-6 gap-y-4 md:gap-y-6 lg:gap-y-8 lg:gap-x-8"
+    >
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+  </section>
+</MainLayout>

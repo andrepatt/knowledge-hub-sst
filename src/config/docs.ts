@@ -3,104 +3,55 @@ import type { DocsConfig } from "@/types";
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "Documentation",
-      href: "/docs/getting-started/",
+      title: "Guida all'Uso",
+      href: "/docs/help",
     },
     {
-      title: "Guides",
-      href: "/guides",
+      title: "Supporto e FAQ",
+      href: "/docs/support",
+    },
+    {
+      title: "Strumenti e Template",
+      href: "/docs/resources",
     },
   ],
   sidebarNav: [
     {
-      title: "Getting Started",
+      title: "Knowledge Base SST",
       items: [
         {
-          title: "Introduction",
-          href: "/docs/getting-started/",
+          title: "Home",
+          href: "/docs/getting-started",
         },
       ],
     },
     {
-      title: "Documentation",
+      title: "Esplora le Funzionalità",
       items: [
         {
-          title: "Introduction",
-          href: "/docs/documentation",
+          title: "Guida all'Uso",
+          href: "/docs/help",
         },
         {
-          title: "Components",
-          href: "/docs/documentation/components",
+          title: "Supporto e FAQ",
+          href: "/docs/support",
         },
         {
-          title: "Configuration  Astro DB",
-          href: "/docs/documentation/components",
-          disabled: true,
-        },
-        {
-          title: "Search (Fuse.js)",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Strumenti e Template",
+          href: "/docs/resources",
         },
       ],
     },
     {
-      title: "Pages",
+      title: "Approfondimenti e Risorse",
       items: [
         {
-          title: "Landing",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Reperibilità",
+          href: "/docs/availability",
         },
         {
-          title: "Changelog",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Wait List",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Examples",
-      items: [
-        // {
-        //   title: "Introduction",
-        //   href: "/docs/in-progress",
-        //   disabled: true,
-        // },
-        {
-          title: "Static Blog",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Docs & Guides",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Blog with Astro DB",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Ecommerce",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Animes (GraphQL)",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Authentification (Lucia)",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Manuali Tecnici",
+          href: "/docs/manuals",
         },
       ],
     },

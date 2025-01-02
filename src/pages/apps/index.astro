@@ -1,0 +1,18 @@
+---
+import AppsHeader from "@/components/apps-header.astro";
+import AppsCard from "@/components/cards/apps-card.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import { getApps } from "@/lib/fetchers";
+
+const apps = await getApps();
+---
+
+<MainLayout title="Applications">
+  <section class="container py-10">
+    <AppsHeader title="Apps" />
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {apps.map((app) => <AppsCard {...app} />)}
+    </div>
+  </section>
+</MainLayout>

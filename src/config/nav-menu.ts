@@ -1,108 +1,124 @@
 import type { NavMenuConfig } from "@/types";
 
 export const navMenuConfig: NavMenuConfig = {
-  pagesNav: [
+  redNav: [
     {
-      title: "Pages",
+      title: "R&D",
       items: [
         {
-          title: "Landing",
-          href: "/landing",
-          description: "A landing page template with differents sections.",
-          image: "/images/examples/landing.jpg",
+          title: "Progetti",
+          href: "/projects",
+          description: "Scopri i progetti attualmente in corso nella struttura SST.",
+          image: "/images/blog/placeholder-2.jpg",
         },
         {
-          title: "Changelog",
+          title: "Standard Architetturali SST",
+          href: "/guides/standard-architetturali/",
+          description: "Consulta gli standard architetturali adottati.",
+          image: "/images/blog/placeholder-2.jpg",
+        },
+        {
+          title: "Mappa Applicativa",
+          href: "/apps",
+          description: "Dettaglio delle applicazioni SST.",
+          image: "/images/blog/placeholder-2.jpg",
+        },
+        {
+          title: "Piattaforme e Tecnologie",
           href: "/releases",
-          description: "A reproduction of Starlog template with Tailwind CSS.",
-          image: "/images/examples/changelog.jpg",
+          description: "Esplora le piattaforme e le tecnologie standard.",
+          image: "/images/blog/placeholder-2.jpg",
+          disabled: true,
         },
         {
-          title: "Waitlist",
-          href: "/waitlist",
-          description:
-            "A waitlist form using Astro DB, React Hook Form & Sonner. Static page.",
-          image: "/images/examples/waitlist.jpg",
-          forceReload: true,
-        },
-        {
-          title: "Pricing",
-          href: "/pricing",
-          description: "Pricing cards, FAQs and more content with price.",
-          image: "/images/examples/pricing.jpg",
-        },
-        {
-          title: "About",
-          href: "/about",
-          description: "A simple page with a masonry gallery and little text.",
-          image: "/images/examples/about.jpg",
-        },
-        {
-          title: "Newsletter",
-          href: "/newsletter",
-          description:
-            "A newsletter form using Astro DB & Simple Stack Form. Counter display!",
-          image: "/images/examples/newsletter.jpg",
+          title: "Roadmap di Innovazione",
+          href: "/animes",
+          description: "Pianificazione strategica per l'innovazione tecnologica.",
+          image: "/images/blog/placeholder-2.jpg",
+          disabled: true,
         },
       ],
     },
   ],
-  examplesNav: [
+  toolNav: [
     {
-      title: "Examples",
+      title: "Strumenti e Risorse",
       items: [
         {
-          title: "Static Blog",
-          href: "/blog",
-          description: "A Markdown/MDX blog built using Content Collections.",
-          image: "/images/examples/static-blog.jpg",
+          title: "Manuali e Guide Utili",
+          href: "/guides",
+          description: "Guide e manuali utili per la struttura SST.",
+          image: "/images/blog/placeholder-2.jpg",
         },
         {
-          title: "Docs",
-          href: "/docs/getting-started",
-          description:
-            "A Markdown/MDX docs site built using Content Collections.",
-          image: "/images/examples/documentation.jpg",
+          title: "Strumenti AI/Gen AI",
+          href: "/tools",
+          description: "Accesso agli strumenti di Intelligenza Artificiale per SST.",
+          image: "/images/blog/placeholder-2.jpg",
         },
         {
-          title: "Anime List",
-          href: "/animes",
-          description:
-            "Fetch anime content from an graphql endpoint. Tabs component.",
-          image: "/images/examples/animes.jpg",
-          launched: true,
-        },
-        {
-          title: "Blog DB",
-          href: "/blog-db",
-          description:
-            "Blog built using Astro DB. With categories, views & likes.",
-          // image: "/images/examples/blog-db.jpg",
+          title: "Link Utili",
+          href: "/",
+          description: "Raccolta di collegamenti utili per la struttura SST.",
+          image: "/images/blog/placeholder-2.jpg",
           disabled: true,
         },
         {
-          title: "Ecommerce",
-          href: "/products",
+          title: "Template e Librerie",
+          href: "/",
+          description: "Template e risorse per semplificare lo sviluppo.",
+          image: "/images/blog/placeholder-2.jpg",
           disabled: true,
-          description: "Ecommerce pages fetching data from an API.",
-          // image: "/images/examples/ecommerce.jpg",
+        },
+      ],
+    },
+  ],
+
+  courseNav: [
+    {
+      title: "Corsi e Formazione",
+      items: [
+        {
+          title: "Catalogo Corsi",
+          href: "/courses",
+          description: "Esplora i corsi di formazione disponibili.",
+          image: "/images/blog/placeholder-2.jpg",
         },
         {
-          title: "Authentification",
-          href: "/auth",
-          description: "Implement an authentification using Astro DB & Lucia",
-          // image: "/images/examples/auth.jpg",
+          title: "Tutorial e Pillole Formative",
+          href: "/",
+          description: "Approfondisci con tutorial e contenuti brevi.",
+          image: "/images/blog/placeholder-2.jpg",
+          disabled: true,
+        },
+        {
+          title: "Programmi di Certificazione",
+          href: "/",
+          description: "Scopri i programmi di certificazione disponibili.",
+          image: "/images/blog/placeholder-2.jpg",
           disabled: true,
         },
       ],
     },
   ],
   links: [
+    {
+      title: "News",
+      href: "/blog",
+      description: "Aggiornamenti, Notizie, Storie di successo ed Eventi.",
+      image: "/images/blog/placeholder-2.jpg",
+    },
+    {
+      title: "Contatti",
+      href: "/about",
+      description: "Informazioni per contattare i referenti della struttura.",
+      image: "/images/blog/placeholder-2.jpg",
+    },
     // {
-    //   title: "Example",
-    //   href: "/example",
-    //   description: "Example description",
-    //   image: "/images/examples/image.jpg",
+    //   title: "Changelog",
+    //   href: "/releases",
+    //   description: "Rilasci delle versioni e delle novità.",
+    //   image: "/images/blog/placeholder-2.jpg",
     // },
   ],
 };

@@ -152,6 +152,13 @@
   background-clip: text;
 }
 
+.text-gradient_blue-green {
+  background: linear-gradient(90deg, #1d4ed8 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .bg_release_version {
   background: linear-gradient(25deg,
       #3a084e,

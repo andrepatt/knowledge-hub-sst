@@ -1,12 +1,10 @@
-import db from "@astrojs/db";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/serverless";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
-import simpleStackForm from "simple-stack-form";
+import pagefind from "astro-pagefind";
 
 // https://astro.build/config
 export default defineConfig({
@@ -22,14 +20,14 @@ export default defineConfig({
     icon(),
     sitemap(),
     react(),
+    pagefind(),
     tailwind({
       applyBaseStyles: false,
     }),
-    db(),
-    simpleStackForm(),
   ],
-  output: "hybrid",
-  adapter: vercel({
-    analytics: true,
-  }),
+  output: "static",
+  // output: "hybrid",
+  // adapter: vercel({
+  //   analytics: true,
+  // }),
 });

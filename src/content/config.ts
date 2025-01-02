@@ -40,6 +40,17 @@ const guides = defineCollection({
   }),
 });
 
+const apps = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.string(),
+    iso: z.string(),
+    business: z.string(),
+    fornitore: z.string(),
+  }),
+});
+
 const releases = defineCollection({
   // Type-check frontmatter using a schema
   schema: ({ image }) =>

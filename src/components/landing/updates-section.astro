@@ -1,0 +1,81 @@
+---
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { CalendarDays, ArrowRight } from 'lucide-react'
+
+const updates = [
+  {
+    date: "15 Dic 2023",
+    title: "Nuovo Framework Frontend",
+    description: "Implementazione del nuovo framework per le applicazioni web con focus su performance e accessibilità",
+    category: "Tech"
+  },
+  {
+    date: "12 Dic 2023",
+    title: "Aggiornamento Documentazione",
+    description: "Rilascio della nuova documentazione API con esempi interattivi e playground",
+    category: "Docs"
+  },
+  {
+    date: "10 Dic 2023",
+    title: "Release Tools v2.0",
+    description: "Nuova versione degli strumenti di sviluppo con supporto per AI",
+    category: "Tools"
+  },
+  {
+    date: "8 Dic 2023",
+    title: "Workshop AI & ML",
+    description: "Sessione formativa sugli strumenti di AI per il team di sviluppo",
+    category: "Eventi"
+  }
+]
+---
+
+<div class="py-32 bg-black">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-16">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight text-white">Ultimi Aggiornamenti</h2>
+        <p class="text-zinc-400 text-lg">
+          Rimani aggiornato sulle ultime novità e sviluppi del team SST
+        </p>
+      </div>
+      <a href="#" class="group inline-flex items-center gap-2 text-[#003DA5] font-medium hover:underline bg-white px-4 py-2 rounded-md">
+        Vedi tutti gli aggiornamenti
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </a>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {updates.map((update) => (
+        <Card className="group bg-white hover:shadow-lg transition-all duration-300">
+          <div class="p-6 h-full flex flex-col">
+            <div class="flex items-center justify-between mb-4">
+              <Badge variant="outline">
+                {update.category}
+              </Badge>
+              <span class="text-sm text-muted-foreground flex items-center gap-2">
+                <CalendarDays className="w-4 h-4" />
+                {update.date}
+              </span>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 group-hover:text-[#003DA5] transition-colors">
+              {update.title}
+            </h3>
+            <p class="text-sm text-muted-foreground mb-4 flex-grow">
+              {update.description}
+            </p>
+            <a 
+              href="#"
+              class="text-sm font-medium text-[#003DA5] group-hover:underline inline-flex items-center gap-1"
+            >
+              Leggi di più
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>
+

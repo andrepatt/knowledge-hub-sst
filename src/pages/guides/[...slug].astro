@@ -1,6 +1,6 @@
 ---
 import { MdxComponents } from "@/components/content/mdx-components";
-import GuidePostLayout from "@/layouts/guide-post.astro";
+import FeaturedPostLayout from "@/layouts/featured-post.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
@@ -25,6 +25,13 @@ if (!slug || !guide) {
 }
 ---
 
-<GuidePostLayout {...guide}>
-  <Content components={MdxComponents} />
-</GuidePostLayout>
+<FeaturedPostLayout {...guide}>
+  <!-- Avvolgi il contenuto con data-pagefind-filter="type:blog" -->
+  <div data-pagefind-filter="type:Guide">
+    <!-- E metti data-pagefind-body sul "contenuto" del post, -->
+    <!-- così Pagefind indicizza tutto il testo dentro <Content /> -->
+    <div data-pagefind-body>
+      <Content components={MdxComponents} />
+    </div>
+  </div>
+</FeaturedPostLayout>

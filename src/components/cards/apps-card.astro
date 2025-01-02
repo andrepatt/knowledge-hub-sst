@@ -1,0 +1,77 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import { Icon } from "astro-icon/components";
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"apps">;
+const post = Astro.props;
+---
+
+<article 
+  class="group"
+  data-apps-card
+  data-title={post.data.title}
+>
+  <Card className="relative h-full overflow-hidden border transition-all hover:border-blue-500/20 hover:shadow-md hover:shadow-blue-500/10">
+    <a href={`/apps/${post.slug}/`} class="absolute inset-0 z-20"></a>
+    
+    <div class="space-y-4 p-5">
+      <div class="flex justify-end">
+        <a
+          href={`/apps/category/${post.data.category}`}
+          class="relative z-30"
+          transition:name={"badge-cat-" + post.slug}
+        >
+          <Badge variant="secondary" radius="md" className="capitalize">
+            {post.data.category}
+          </Badge>
+        </a>
+      </div>
+      
+      <div>
+        <h2
+          class="font-heading text-lg font-bold leading-snug transition-colors group-hover:text-blue-500 md:text-xl"
+          transition:name={"title-" + post.slug}
+        >
+          {post.data.title}
+        </h2>
+        <p class="mt-2 line-clamp-2 text-sm text-muted-foreground">
+          {post.data.description}
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3 rounded-lg border bg-muted/50 p-3">
+        <div class="flex items-center gap-2">
+          <div class="flex size-7 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+            <Icon name="lucide:monitor" class="size-4" />
+          </div>
+          <div class="flex-1 space-y-0.5">
+            <p class="text-xs font-medium leading-none">IT Manager</p>
+            <p class="text-xs text-muted-foreground">{post.data.iso}</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="flex size-7 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+            <Icon name="lucide:briefcase" class="size-4" />
+          </div>
+          <div class="flex-1 space-y-0.5">
+            <p class="text-xs font-medium leading-none">Business Owner</p>
+            <p class="text-xs text-muted-foreground">{post.data.business}</p>
+          </div>
+        </div>
+
+        <div class="col-span-2 flex items-center gap-2">
+          <div class="flex size-7 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+            <Icon name="lucide:code" class="size-4" />
+          </div>
+          <div class="flex-1 space-y-0.5">
+            <p class="text-xs font-medium leading-none">Fornitore</p>
+            <p class="text-xs text-muted-foreground">{post.data.fornitore}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Card>
+</article>

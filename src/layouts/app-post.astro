@@ -1,0 +1,145 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "./main-layout.astro";
+
+type Props = CollectionEntry<"apps">;
+
+const slug = Astro.props.slug;
+const { title, description, category, iso, business, fornitore, ...restData } =
+  Astro.props.data;
+---
+
+<MainLayout title={title} description={description}>
+  <div class="container relative py-10">
+    <button
+      onclick="history.back()"
+      class={cn(
+        buttonVariants({ variant: "ghost" }),
+        "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
+      )}
+      transition:animate="slide"
+    >
+      <Icon name="lucide:chevron-left" class="mr-2 size-4" />
+      Back
+    </button>
+
+    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_280px]">
+      <article class="prose dark:prose-invert max-w-none">
+        <div class="mb-8 space-y-6">
+          <div class="flex items-start justify-between">
+            <h1 
+              class="!mt-0 !mb-0 font-heading text-4xl"
+              transition:name={`title-${slug}`}
+            >
+              {title}
+            </h1>
+            
+            <a
+              href={`/apps/category/${category}`}
+              transition:name={`badge-cat-${slug}`}
+              class="no-underline"
+            >
+              <Badge 
+                variant="secondary" 
+                className="capitalize bg-black hover:bg-black/90 text-white px-4 py-1.5 text-sm font-medium"
+              >
+                {category}
+              </Badge>
+            </a>
+          </div>
+
+          <p class="!mt-4 text-xl text-muted-foreground leading-relaxed">
+            {description}
+          </p>
+
+          <hr class="!my-8" />
+        </div>
+
+        <slot />
+      </article>
+
+      <aside class="space-y-6">
+        <div class="sticky top-20">
+          <h2 class="mb-4 text-lg font-semibold">App Details</h2>
+          
+          <div class="space-y-3">
+            {iso && (
+              <Card className="overflow-hidden border-l-4 border-l-blue-500">
+                <div class="flex items-center gap-3 p-4">
+                  <div class="flex size-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                    <Icon name="lucide:monitor" class="size-5" />
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-sm font-medium leading-none">IT Manager</p>
+                    <p class="mt-1 text-sm text-muted-foreground">{iso}</p>
+                  </div>
+                </div>
+              </Card>
+            )}
+
+            {business && (
+              <Card className="overflow-hidden border-l-4 border-l-blue-500">
+                <div class="flex items-center gap-3 p-4">
+                  <div class="flex size-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                    <Icon name="lucide:briefcase" class="size-5" />
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-sm font-medium leading-none">Business Owner</p>
+                    <p class="mt-1 text-sm text-muted-foreground">{business}</p>
+                  </div>
+                </div>
+              </Card>
+            )}
+
+            {fornitore && (
+              <Card className="overflow-hidden border-l-4 border-l-blue-500">
+                <div class="flex items-center gap-3 p-4">
+                  <div class="flex size-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                    <Icon name="lucide:code" class="size-5" />
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-sm font-medium leading-none">Fornitore</p>
+                    <p class="mt-1 text-sm text-muted-foreground">{fornitore}</p>
+                  </div>
+                </div>
+              </Card>
+            )}
+
+            <!-- {Object.entries(restData).map(([key, value]) => (
+              value && (
+                <Card className="overflow-hidden border-l-4 border-l-blue-500">
+                  <div class="flex items-center gap-3 p-4">
+                    <div class="flex size-10 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                      <Icon name="lucide:info" class="size-5" />
+                    </div>
+                    <div class="flex-1">
+                      <p class="text-sm font-medium leading-none capitalize">
+                        {key.replace(/([A-Z])/g, ' $1').trim()}
+                      </p>
+                      <p class="mt-1 text-sm text-muted-foreground">{value}</p>
+                    </div>
+                  </div>
+                </Card>
+              )
+            ))} -->
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</MainLayout>
+
+<style>
+  .prose {
+    @apply !max-w-none;
+  }
+  
+  .prose > :first-child {
+    @apply !mt-0;
+  }
+</style>

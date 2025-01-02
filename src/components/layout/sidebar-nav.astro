@@ -15,7 +15,7 @@ const { pathname } = Astro.url;
     <div class="w-full">
       {items.map((item) => (
         <div class={cn("pb-8")}>
-          <h4 class="mb-1 rounded-md px-2 py-1 text-sm font-medium">
+          <h4 class="mb-1 rounded-md px-2 py-1 text-base font-bold">
             {item.title}
           </h4>
 
@@ -26,7 +26,7 @@ const { pathname } = Astro.url;
                   <a
                     href={item.href}
                     class={cn(
-                      "flex w-full items-center rounded-md p-2 hover:underline",
+                      "flex w-full items-center rounded-md p-2 text-gray-700 hover:underline",
                       {
                         "bg-muted": pathname === item.href,
                       }

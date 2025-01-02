@@ -1,0 +1,22 @@
+---
+// Importa il file JSON con i corsi
+import courses from "@/components/content/courses.json";
+import ExampleGrid from "@/components/example-grid.astro";
+import PageHeader from "@/components/page-header.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+---
+
+<MainLayout title="Catalogo Corsi">
+  <div class="bg-background-200">
+    <section class="container py-12">
+      <PageHeader
+        heading="Catalogo Corsi"
+        text="Esplora i corsi e le risorse di formazione disponibili per il personale di sviluppo sistemi."
+      />
+
+      {courses.map((category) => (
+        <ExampleGrid title={category.category} items={category.courses} />
+      ))}
+    </section>
+  </div>
+</MainLayout>

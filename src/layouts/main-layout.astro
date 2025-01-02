@@ -1,16 +1,11 @@
 ---
 import Footer from "@/components/layout/footer.astro";
 import Header from "@/components/layout/header.astro";
-import { MainNavigationMenu } from "@/components/main-navigation-menu";
-import { cn } from "@/lib/utils";
 import BaseLayout from "./base-layout.astro";
-import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
+import { MainNavigationMenu } from "@/components/main-navigation-menu";
 import { navMenuConfig } from "@/config/nav-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
-import { siteConfig } from "@/config/site";
-import { Icon } from "astro-icon/components";
-// import { marketingConfig } from "@/config/marketing";
-// import MainNav from "@/components/layout/main-nav.astro";
+import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
+import Search from "@/components/ui/search.astro";
 
 type Props = {
   title: string;
@@ -19,44 +14,36 @@ type Props = {
 };
 
 const { title, description, mainClass } = Astro.props;
+
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} >
   <Header className="border-b">
-    <!-- if using only normals links  -->
-    <!-- <MainNav items={marketingConfig.mainNav} slot="left-header" />
-    <SheetMobileNav
-      mainNavItems={marketingConfig.mainNav}
-      slot="mobile-nav-header"
-      client:load
-    /> -->
-
-    <!-- if use Navigation Menu on desktop -->
     <MainNavigationMenu slot="left-header" client:load />
     <SheetMobileNav
       mainNavItems={[...navMenuConfig.links]}
       sidebarNavItems={[
-        ...navMenuConfig.pagesNav,
-        ...navMenuConfig.examplesNav,
+        ...navMenuConfig.redNav,
+        ...navMenuConfig.toolNav,
+        ...navMenuConfig.courseNav,
       ]}
       slot="mobile-nav-header"
       client:load
     />
 
     <div class="flex items-center gap-x-4" slot="right-header">
-      <a
-        href={siteConfig.links.github}
-        target="_blank"
-        rel="noreferrer"
-        aria-label="github"
-      >
-        <Icon name="github" class="size-[22px]" />
+      <Search />
+      <!-- Button with arrow icon -->
+      <a href="/docs" class="flex items-center gap-x-2 px-3 py-1.5 bg-blue-500 text-white rounded hover:bg-blue-800">
+        <span>Knowledge Base</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H3a1 1 0 110-2h10.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+        </svg>
       </a>
-      <ThemeToggle client:load />
-    </div>
-  </Header>
+        </div>
+  </Header> 
 
-  <main class={cn(mainClass)}>
+  <main class={mainClass}>
     <slot />
   </main>
 

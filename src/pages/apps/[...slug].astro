@@ -1,0 +1,35 @@
+---
+import AppPostLayout from '@/layouts/app-post.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const apps = await getCollection('apps');
+	return apps.map((app) => ({
+		params: { slug: app.slug },
+		props: app,
+	}));
+}
+
+type Props = CollectionEntry<'apps'>;
+
+const post = Astro.props;
+const slug = Astro.params.slug;
+const { Content } = await post.render();
+
+if (!slug || !post) {
+  return new Response(null, {
+    status: 404,
+    statusText: 'Not found'
+  });
+}
+---
+<AppPostLayout {...post}>
+	<!-- Avvolgi il contenuto con data-pagefind-filter="type:blog" -->
+	<div data-pagefind-filter="type:Applicazioni">
+		<!-- E metti data-pagefind-body sul "contenuto" del post, -->
+		<!-- così Pagefind indicizza tutto il testo dentro <Content /> -->
+		<div data-pagefind-body>
+		  <Content />
+		</div>
+	  </div>
+</AppPostLayout>

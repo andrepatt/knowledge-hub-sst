@@ -1,0 +1,56 @@
+[
+	{
+	  "name": "ChatGPT",
+	  "description": "ChatGPT è uno dei modelli di linguaggio naturale più avanzati sviluppati da OpenAI. Questo strumento AI è in grado di comprendere il contesto e generare risposte testuali intelligenti. Ideale per chatbot, assistenza clienti, scrittura creativa e apprendimento linguistico, è un compagno potente per migliorare la produttività.",
+	  "image": "https://chat.openai.com/favicon.ico",
+	  "url": "https://chat.openai.com/"
+	},
+	{
+	  "name": "DALL·E 2",
+	  "description": "DALL·E 2 è un modello di intelligenza artificiale di OpenAI progettato per generare immagini di alta qualità a partire da descrizioni testuali. Perfetto per designer, creatori di contenuti e artisti, consente di trasformare idee astratte in rappresentazioni visive straordinarie, con un'incredibile attenzione ai dettagli.",
+	  "image": "https://openai.com/favicon.ico",
+	  "url": "https://openai.com/dall-e-2/"
+	},
+	{
+	  "name": "Stable Diffusion",
+	  "description": "Stable Diffusion è un modello open-source per la generazione di immagini basato sull'intelligenza artificiale generativa. Flessibile e potente, è ampiamente utilizzato per creare visualizzazioni realistiche o artistiche e offre agli sviluppatori e artisti la libertà di personalizzare e migliorare le proprie creazioni.",
+	  "image": "https://stability.ai/favicon.ico",
+	  "url": "https://stability.ai/"
+	},
+	{
+	  "name": "Suno",
+	  "description": "Suno è uno strumento di generazione creativa che utilizza l'intelligenza artificiale per produrre musica, testi e contenuti sonori. Ideale per artisti musicali e produttori, facilita l'esplorazione di nuove sonorità e la creazione di composizioni uniche in modo rapido e intuitivo.",
+	  "image": "https://www.suno.ai/favicon.ico",
+	  "url": "https://www.suno.ai/"
+	},
+	{
+	  "name": "ElevenLabs",
+	  "description": "ElevenLabs offre una piattaforma avanzata per la sintesi vocale AI, che genera voci realistiche e personalizzate. Perfetto per video narrativi, podcast e assistenti vocali, consente di ottenere un audio professionale con un'ampia gamma di tonalità e accenti.",
+	  "image": "https://elevenlabs.io/favicon.ico",
+	  "url": "https://elevenlabs.io/"
+	},
+	{
+	  "name": "QuillBot",
+	  "description": "QuillBot è un assistente AI che aiuta a parafrasare e riformulare testi mantenendo intatti il significato e il contesto. È particolarmente utile per studenti, ricercatori e scrittori che vogliono migliorare la qualità della loro scrittura.",
+	  "image": "https://quillbot.com/favicon.ico",
+	  "url": "https://quillbot.com/"
+	},
+	{
+	  "name": "Notion AI",
+	  "description": "Notion AI è un assistente integrato nella piattaforma di produttività Notion che utilizza l'intelligenza artificiale per aiutarti a organizzare, creare e ottimizzare il tuo lavoro. È perfetto per la gestione dei progetti e la collaborazione in team.",
+	  "image": "https://www.notion.so/images/favicon.ico",
+	  "url": "https://www.notion.so/product/ai"
+	},
+	{
+	  "name": "Fireflies AI",
+	  "description": "Fireflies AI è un assistente virtuale che trascrive e analizza automaticamente le riunioni. Ideale per professionisti e team, aiuta a documentare conversazioni, organizzare informazioni e migliorare la produttività aziendale.",
+	  "image": "https://fireflies.ai/favicon.ico",
+	  "url": "https://fireflies.ai/"
+	},
+	{
+	  "name": "Otter.ai",
+	  "description": "Otter.ai è un'applicazione AI avanzata per la trascrizione in tempo reale di conversazioni, riunioni e interviste. Perfetto per studenti, giornalisti e professionisti, semplifica la cattura di informazioni critiche con precisione.",
+	  "image": "https://otter.ai/favicon.ico",
+	  "url": "https://otter.ai/"
+	}
+]

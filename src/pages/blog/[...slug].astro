@@ -24,5 +24,12 @@ if (!slug || !post) {
 }
 ---
 <BlogPostLayout {...post}>
-	<Content />
+	<!-- Avvolgi il contenuto con data-pagefind-filter="type:blog" -->
+	<div data-pagefind-filter="type:Notizie">
+		<!-- E metti data-pagefind-body sul "contenuto" del post, -->
+		<!-- così Pagefind indicizza tutto il testo dentro <Content /> -->
+		<div data-pagefind-body>
+		  <Content />
+		</div>
+	  </div>
 </BlogPostLayout>

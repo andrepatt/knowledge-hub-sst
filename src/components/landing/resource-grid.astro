@@ -1,0 +1,100 @@
+---
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, Clock, Users } from 'lucide-react'
+
+const resources = [
+  {
+    title: "Mappa Applicativa SSD 2024",
+    description: "Esplora l'architettura completa dei sistemi e delle integrazioni",
+    image: "/images/examples/placeholder.jpg?height=400&width=600",
+    tag: "Architettura",
+    new: true,
+    readTime: "15 min",
+    authors: ["Marco R.", "Laura B."]
+  },
+  {
+    title: "AI Tools per Development",
+    description: "Guide all'utilizzo degli strumenti di AI per aumentare la produttività",
+    image: "/images/examples/placeholder.jpg?height=400&width=600",
+    tag: "Innovazione",
+    readTime: "10 min",
+    authors: ["Sofia M."]
+  },
+  {
+    title: "Security Guidelines 2024",
+    description: "Nuove linee guida per la sicurezza e la compliance",
+    image: "/images/examples/placeholder.jpg?height=400&width=600",
+    tag: "Sicurezza",
+    new: true,
+    readTime: "20 min",
+    authors: ["Alessandro D.", "Giulia F."]
+  },
+  {
+    title: "Cloud Migration Handbook",
+    description: "Best practices per la migrazione dei servizi su cloud",
+    image: "/images/examples/placeholder.jpg?height=400&width=600",
+    tag: "Cloud",
+    readTime: "25 min",
+    authors: ["Roberto M."]
+  },
+]
+---
+
+<div class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <h2 class="text-3xl font-bold tracking-tight">Risorse in Evidenza</h2>
+      <p class="text-muted-foreground text-lg">
+        Le guide e gli strumenti più recenti e rilevanti per il team SST
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {resources.map((resource) => (
+        <Card className="group overflow-hidden hover:shadow-xl transition-all duration-300">
+          <div class="relative aspect-[16/9] overflow-hidden">
+            <img
+              src={resource.image}
+              alt={resource.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute top-4 right-4 flex gap-2">
+              {resource.new && (
+                <Badge className="bg-[#003DA5] text-white">Nuovo</Badge>
+              )}
+              <Badge variant="outline" className="bg-white/90 backdrop-blur-sm">
+                {resource.tag}
+              </Badge>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 group-hover:text-[#003DA5] transition-colors">
+              {resource.title}
+            </h3>
+            <p class="text-muted-foreground mb-4">
+              {resource.description}
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-4 text-sm text-muted-foreground">
+                <div class="flex items-center gap-1">
+                  <Clock className="w-4 h-4" />
+                  {resource.readTime}
+                </div>
+                <div class="flex items-center gap-1">
+                  <Users className="w-4 h-4" />
+                  {resource.authors.join(", ")}
+                </div>
+              </div>
+              <Button variant="ghost" size="sm" className="text-[#003DA5] group/btn">
+                Leggi
+                <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+          </div>
+        </Card>
+      ))}
+    </div>
+  </div>
+</div>

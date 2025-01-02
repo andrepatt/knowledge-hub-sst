@@ -1,0 +1,73 @@
+---
+import HeaderSection from "./header-section.astro";
+
+const features = [
+  {
+    title: "Accesso Centralizzato",
+    description:
+      "Raccogli tutta la documentazione, le guide e i manuali in un unico luogo, sempre accessibili.",
+    icon: "https://cdn-icons-png.flaticon.com/512/3652/3652191.png", // Icona "documentazione"
+    href: "#",
+  },
+  {
+    title: "Strumenti AI/Gen AI",
+    description:
+      "Integra tecnologie di intelligenza artificiale per accelerare processi e decisioni.",
+    icon: "https://cdn-icons-png.flaticon.com/512/4359/4359728.png", // Icona "intelligenza artificiale"
+    href: "#",
+  },
+  {
+    title: "Standard Architetturali",
+    description:
+      "Consulta linee guida strutturate per progettare soluzioni scalabili e sicure.",
+    icon: "https://cdn-icons-png.flaticon.com/512/2920/2920372.png", // Icona "standard"
+    href: "#",
+  },
+  {
+    title: "Mappa Applicativa",
+    description:
+      "Ottieni una visione d'insieme delle applicazioni sviluppate da SST.",
+    icon: "https://cdn-icons-png.flaticon.com/512/3135/3135706.png", // Icona "mappa"
+    href: "#",
+  },
+];
+
+---
+
+<div id="features" class="pt-16">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+    <HeaderSection
+      label="Cosa puoi fare?"
+      title="Funzionalità per migliorare il lavoro quotidiano"
+      subtitle="Scopri strumenti e risorse pensati per ottimizzare i processi, favorire la collaborazione e garantire l’accesso centralizzato alle informazioni chiave."
+    />
+
+    <div class="mt-16 grid divide-x divide-y divide-gray-100 dark:divide-gray-700 overflow-hidden rounded-3xl border border-gray-100 text-gray-600 dark:border-gray-700 sm:grid-cols-2 lg:grid-cols-4 lg:divide-y-0 xl:grid-cols-4">
+      {features.map((feature, index) => (
+        <div
+          class={`group relative ${
+            index === 3 ? "bg-gray-50 dark:bg-gray-900" : "bg-white dark:bg-gray-800"
+          } transition hover:z-[1] hover:shadow-2xl hover:shadow-gray-600/10 text-center`}
+        >
+          <a href={feature.href} class="block relative space-y-8 py-16 p-8">
+            <img
+              src={feature.icon}
+              class="w-12 mx-auto"
+              width="512"
+              height="512"
+              alt={feature.title}
+            />
+            <div class="space-y-2">
+              <h5 class="text-xl font-semibold text-gray-700 dark:text-white transition group-hover:text-blue-500">
+                {feature.title}
+              </h5>
+              <p class="text-gray-600 dark:text-gray-300">
+                {feature.description}
+              </p>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

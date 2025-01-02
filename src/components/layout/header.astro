@@ -17,30 +17,32 @@ const { className } = Astro.props;
   )}
 >
   <div class="relative container flex items-center justify-between w-full">
+    {/* Left section */}
     <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
       <a href="/" class="hidden items-center space-x-2 md:flex">
-        <Icon name="stars-outline" class="size-8" />
-        <span class="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
+      <img src="/images/Logo_Terna.png" alt="Logo" class="h-11 w-35" />
       </a>
+    </div>
 
-      <slot name="mobile-nav-header" />
-
-      <div class="hidden md:flex">
+    {/* Centered navigation */}
+    <div class="flex-1 flex justify-center items-center">
+      <div class="hidden md:flex items-center gap-6">
         <slot name="left-header" />
+      </div>
+      
+      {/* Mobile logo */}
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-4 -translate-y-4 md:hidden"
+      >
+        <a href="/" aria-label="Astronomy homepage">
+          <Icon name="stars-outline" class="size-8" />
+        </a>
       </div>
     </div>
 
-    <!-- logo mobile center -->
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-4 -translate-y-4 md:hidden"
-    >
-      <a href="/" aria-label="Astronomy homepage">
-        <Icon name="stars-outline" class="size-8" />
-      </a>
+    {/* Right section */}
+    <div class="flex items-center ml-auto">
+      <slot name="right-header" />
     </div>
-
-    <slot name="right-header" />
   </div>
 </header>
