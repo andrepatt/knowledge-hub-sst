@@ -31,6 +31,6 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_MANGO_FLOWER_0EDF37903 }}
           action: "upload"
-          app_location: "."           # Percorso relativo senza slash iniziale
-          output_location: "dist"     # Percorso relativo senza slash iniziale
+          app_location: "/"           # Percorso relativo senza slash iniziale
+          output_location: "/dist"     # Percorso relativo senza slash iniziale
           
