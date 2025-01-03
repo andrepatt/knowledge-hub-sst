@@ -7,7 +7,6 @@ import { defineConfig } from "astro/config";
 import pagefind from "astro-pagefind";
 import vercel from "@astrojs/vercel/serverless";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://mango-flower-0edf37903.4.azurestaticapps.net/",
   integrations: [
@@ -21,14 +20,17 @@ export default defineConfig({
     icon(),
     sitemap(),
     react(),
-    pagefind(),
+    pagefind({
+      // Escludi la classe ai.astro (e qualsiasi percorso derivato da essa)
+      exclude: ["/ai"],
+    }),
     tailwind({
       applyBaseStyles: false,
     }),
   ],
-  // output: "static",
-  output: "hybrid",
+  output: "hybrid", // Necessario per supportare la pagina dinamica ai.astro
   adapter: vercel({
-    analytics: true,
+    analytics: true, // Attiva il tracciamento analitico su Vercel
   }),
-});
+  },
+);
