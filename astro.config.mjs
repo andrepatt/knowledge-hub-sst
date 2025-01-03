@@ -5,6 +5,7 @@ import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 import pagefind from "astro-pagefind";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,9 +26,9 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
-  output: "static",
-  // output: "hybrid",
-  // adapter: vercel({
-  //   analytics: true,
-  // }),
+  // output: "static",
+  output: "hybrid",
+  adapter: vercel({
+    analytics: true,
+  }),
 });

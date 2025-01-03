@@ -14,55 +14,51 @@ import SearchComponent from "astro-pagefind/components/Search";
 <div class="inline-block">
   <!-- Bottone "Search" -->
   <button
-  onclick="openSearch()"
-  class="
-    inline-flex items-center gap-2 
-    px-3 py-1.5 
-    rounded-md 
-    text-sm font-medium 
-    bg-white text-black 
-    hover:bg-secondary/90 
-    focus-visible:outline-none 
-    focus-visible:ring-2 
-    focus-visible:ring-ring 
-    focus-visible:ring-offset-2 
-    transition-colors 
-    border border-gray-300
-  "
-  aria-label="Search"
->
-  <!-- Icona -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    class="w-4 h-4 text-black"
+    onclick="openSearch()"
+    class="inline-flex items-center gap-2
+    px-3 py-1.5
+    rounded-md
+    text-sm font-medium
+    bg-white text-black
+    hover:bg-secondary/90
+    focus-visible:outline-none
+    focus-visible:ring-2
+    focus-visible:ring-ring
+    focus-visible:ring-offset-2
+    transition-colors
+    border border-gray-300"
+    aria-label="Search"
   >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M21 21l-4.35-4.35m0 0a7.5 
+    <!-- Icona -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-4 h-4 text-black"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M21 21l-4.35-4.35m0 0a7.5 
          7.5 0 111.06-1.06 7.5 7.5 
          0 01-1.06 1.06z"
-    ></path>
-  </svg>
+      ></path>
+    </svg>
 
-  <span>Search</span>
+    <span>Search</span>
 
-  <!-- KBD -->
-  <kbd
-    class="
-      ml-2 text-xs px-1.5 py-0.5
+    <!-- KBD -->
+    <kbd
+      class="ml-2 text-xs px-1.5 py-0.5
       bg-muted text-muted-foreground
       border border-input
-      rounded 
-    "
-  >
-    Ctrl K
-  </kbd>
-</button>
+      rounded"
+    >
+      Ctrl K
+    </kbd>
+  </button>
 
   <!-- MODAL DI RICERCA -->
   <div
@@ -80,19 +76,29 @@ import SearchComponent from "astro-pagefind/components/Search";
       onclick="(event) => event.stopPropagation()"
     >
       <!-- Componente Pagefind -->
-      <SearchComponent
-        id="search-element"
-        className="pagefind-ui w-full py-4 text-left"
-        uiOptions={{
-          highlightParam: "highlight", // Deve corrispondere al parametro usato in PagefindHighlight
-          showImages: false,
-          showSubResults: true,
-          translations: {
-            placeholder: "Cerca...",
-            zero_results: "Nessun risultato per [SEARCH_TERM]",
-          },
-        }}
-      />
+      <div class="flex justify-between items-center mb-4">
+        <SearchComponent
+          id="search-element"
+          className="pagefind-ui w-full py-4 text-left"
+          uiOptions={{
+            highlightParam: "highlight", // Deve corrispondere al parametro usato in PagefindHighlight
+            showImages: false,
+            showSubResults: true,
+            translations: {
+              placeholder: "Cerca...",
+              zero_results: "Nessun risultato per [SEARCH_TERM]",
+            },
+          }}
+        />
+        <!-- Bottone "Ask AI" -->
+        <a
+          href="/ai"
+          class="flex items-center gap-x-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-green-500 text-white rounded-md shadow-md hover:from-blue-600 hover:to-green-600 transition-all ml-4"
+          style="height: 100%; display: flex; align-items: center; white-space: nowrap; width: 120px; justify-content: center;"
+        >
+          <span class="text-sm font-medium">Ask AI</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>

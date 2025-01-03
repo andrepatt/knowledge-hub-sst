@@ -1,0 +1,14 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+import ChatbotAI from "@/components/ai-chatbot.tsx";
+import DocsPageHeader from "@/components/page-header.astro";
+---
+
+<MainLayout title="KB Chatbot">
+    <section class="container max-w-6xl py-10">
+        <DocsPageHeader
+            heading="Ask AI"
+        />
+        <ChatbotAI client:load />
+    </section>
+</MainLayout>
