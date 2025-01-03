@@ -1,94 +1,29 @@
-# Astronomy
+# Knowledge Hub
 
-An open source application built using the latest features in Astro v4 with shadcn/ui.
+An platform designed to centralize documentation, guides, and tools for the SST structure. Built using Astro v4 and leveraging modern UI components.
 
 > **Warning**
-> This app is a work in progress. I'm building this in public. You can follow the progress on Twitter [@miickasmt](https://twitter.com/miickasmt).
-> See the roadmap below.
+> This project is a work in progress. We're actively developing new features and iterating based on feedback. Stay tuned for updates.
 
-## About this project
+## About this Project
 
-This project as an experiment to see how a modern app (with features like authentication, subscriptions, API routes, Markdown, Content Collections ...etc) would work in Astro v4 and shadcn/ui.
+The Knowledge Hub is designed to simplify access to technical resources, guides, and tools, enabling collaboration and efficient workflows across the organization. This platform leverages the latest in web technology, including Astro v4, Tailwind CSS, and modern UI components.
 
 > **Note**
-> I would like to inform you that for the time being, my example app built with Astro.js is still under development and **cannot yet be considered a starter template**.
-
-## Project Structure
-
-```
-├── public/
-│   └── fonts/
-├── src/
-│   ├── components/
-│   ├── config/
-│   ├── content/
-│   ├── hooks/
-│   ├── icons/
-│   ├── layouts/
-│   ├── lib/
-│   ├── pages/
-│   ├── styles/
-│   └── types/
-├── astro.config.mjs
-├── README.md
-├── package.json
-├── tailwind.config.cjs
-└── tsconfig.json
-```
+> The Knowledge Hub is under development and currently tailored to internal use within the SST structure. It's not yet available as a general-purpose template.
 
 ## Features
 
-- Config files
-- Views Transitions
-- Routing and Layouts
-- React components & hooks
-- UI Components built using **shadcn/ui**
-- Documentation and blog using **MDX** and **Content Collections**
-- Styled using **Tailwind CSS**
-- Validations using **Zod**
+- Centralized documentation with **MDX** and **Content Collections**
+- Modern UI built with **shadcn/ui**
+- Fully styled using **Tailwind CSS**
+- Authentication support (under development)
+- API routes for dynamic functionality
 - Written in **TypeScript**
-- 100/100 Lighthouse performance
-- Minimal styling (make it your own!)
-- RSS Feed support
-- Sitemap support
-- Data Fetching
-- API Endpoint
-
-_Not implemented yet :_
-
-- SEO component
-- Subscriptions using **Lemon Squeezy** ?
-
-## Roadmap
-
-- [x] ~Dark mode~
-- [x] ~Add Markdown & MDX support~
-- [x] ~Sheet mobile nav~
-- [x] ~Build **changelog pages**~
-- [x] ~Build **waitlist with React Hook Form**~
-- [x] ~Build **newsletter with Simple Form**~
-- [x] ~Build **animes pages** (graphql)~
-- [ ] Build **blog with Astro DB** (work on it)
-- [ ] Build **ecommerce pages** (work on it)
-- [ ] Build **auth/dashboard pages**
-- [ ] Add search support for blog
-- [ ] Add OG image for blog and others
-- [ ] Add SEO component & metadata
-- [ ] Subscriptions using Stripe (or Lemon Squeezy?)
-
-## Running Locally
-
-1. Install dependencies using pnpm:
-
-```sh
-pnpm install
-```
-
-2. Start the development server:
-
-```sh
-pnpm run dev
-```
+- High performance with Lighthouse scores of 100/100
+- Support for RSS Feed and Sitemap generation
+- Interactive changelog and release notes
+- Easy integration with tools like **Zod** for validation
 
 ## License
 
