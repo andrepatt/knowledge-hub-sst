@@ -1,0 +1,22 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+---
+
+<MainLayout title="Tools">
+    <section class="relative z-20 max-w-6xl mx-auto my-12 px-7 lg:px-0">
+        <div>
+            <h1 class="inline-block font-heading text-4xl pb-2">
+                Chat with your files
+            </h1>
+            <p class="text-muted-foreground">
+                Prova una delle diverse opzioni disponibili e inizia la conversazione.
+            </p>
+        </div>
+        <hr class="my-4" />
+        <iframe
+            src="https://llm-examples.streamlit.app/?embed=true"
+            style="height: 600px; width: 100%;"
+            class="sm:h-50px"
+        ></iframe>
+    </section>
+</MainLayout>

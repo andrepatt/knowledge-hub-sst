@@ -1,5 +1,6 @@
 ---
 import AppPostLayout from '@/layouts/app-post.astro';
+import { MdxComponents } from "@/components/content/mdx-components";
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -29,7 +30,7 @@ if (!slug || !post) {
 		<!-- E metti data-pagefind-body sul "contenuto" del post, -->
 		<!-- così Pagefind indicizza tutto il testo dentro <Content /> -->
 		<div data-pagefind-body>
-		  <Content />
+			<Content components={MdxComponents} />
 		</div>
 	  </div>
 </AppPostLayout>

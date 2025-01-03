@@ -11,10 +11,24 @@ const projects = await getProjects();
   <section class="container py-10">
     <ProjectHeader title="Progetti" />
 
-    <div
-      class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-x-6 gap-y-4 md:gap-y-6 lg:gap-y-8 lg:gap-x-8"
-    >
-      {projects.map((project) => <ProjectCard {...project} />)}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      {projects.map((project) => (
+        <div data-aos="fade-up" data-aos-duration="800">
+          <ProjectCard {...project} />
+        </div>
+      ))}
     </div>
   </section>
 </MainLayout>
+
+<script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+  
+  AOS.init({
+    once: true,
+    offset: 50,
+    duration: 800,
+    easing: 'ease-out',
+  });
+</script>

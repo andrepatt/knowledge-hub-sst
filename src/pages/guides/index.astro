@@ -5,8 +5,6 @@ import MainLayout from "@/layouts/main-layout.astro";
 import { getGuides } from "@/lib/fetchers";
 
 const guides = await getGuides();
-
-// Filtra le guide in evidenza e quelle normali
 const featuredGuides = guides.filter((guide) => guide.data.featured);
 const otherGuides = guides.filter((guide) => !guide.data.featured);
 ---
@@ -21,11 +19,17 @@ const otherGuides = guides.filter((guide) => !guide.data.featured);
     <!-- Guide in Evidenza -->
     {featuredGuides.length > 0 && (
       <div class="mb-12">
-        <h2 class="text-2xl font-bold mb-6">Guide in evidenza</h2>
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+          Guide in evidenza
+          <span class="inline-block w-2 h-2 rounded-full bg-gradient-to-br from-blue-500 to-blue-800 animate-pulse"></span>
+        </h2>
         <div class="space-y-6">
           {featuredGuides.map((guide) => (
-            <div class="p-4 rounded-lg border-2 border-blue-500">
-              <GuideCard {...guide} />
+            <div class="group relative">
+              <div class="absolute -inset-1 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-600/30 rounded-lg blur-sm transition-all duration-500 group-hover:blur-md"></div>
+              <div class="relative bg-white dark:bg-zinc-900 rounded-lg shadow-sm">
+                <GuideCard {...guide} />
+              </div>
             </div>
           ))}
         </div>
@@ -38,7 +42,7 @@ const otherGuides = guides.filter((guide) => !guide.data.featured);
         <h2 class="text-2xl font-bold mb-6">Altre Guide</h2>
         <div class="grid gap-4 md:grid-cols-2 md:gap-6">
           {otherGuides.map((guide) => (
-            <div>
+            <div class="bg-white dark:bg-zinc-900 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md">
               <GuideCard {...guide} />
             </div>
           ))}
@@ -47,3 +51,12 @@ const otherGuides = guides.filter((guide) => !guide.data.featured);
     )}
   </section>
 </MainLayout>
+
+<style>
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+</style>
+

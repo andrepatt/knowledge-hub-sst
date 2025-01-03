@@ -2,6 +2,53 @@
 import tools from "@/components/content/tools.json";
 import MainLayout from "@/layouts/main-layout.astro";
 import ToolCard from "@/components/cards/tool-card.astro";
+
+// Custom tools data
+const customTools = [
+{
+    "name": "Chat with your files",
+    "description": "Chatbot su file aziendali",
+    "url": "/ai-tools/generic-chatbot",
+    "enabled": true
+    },
+    {
+    "name": "Calcolatore Function Points",
+    "description": "Calcola Function Points da specifiche funzionali (ARU).",
+    "url": "/ai-tools/fp-aru",
+    "enabled": true
+    },
+    {
+    "name": "Chatbot RTO",
+    "description": "Chatbot avanzato per istruzioni operative in tempo reale.",
+    "url": "#",
+    "enabled": false
+    },
+    {
+    "name": "PM Helper",
+    "description": "Genera timeline e piani di progetto ottimizzati a supporto dei PM.",
+    "url": "#",
+    "enabled": false
+    },
+    {
+    "name": "Developer Helper",
+    "description": "Analizza codice sorgente per bug e ottimizzazioni.",
+    "url": "#",
+    "enabled": false
+    },
+    {
+    "name": "Documents Helper",
+    "description": "Riassume documenti tecnici e report rapidamente.",
+    "url": "#",
+    "enabled": false
+    },
+    {
+    "name": "PPTs Helper",
+    "description": "Genera presentazioni aziendali ottimizzate per stakeholder.",
+    "url": "#",
+    "enabled": false
+    }
+]
+;
 ---
 
 <MainLayout title="Tools">
@@ -31,18 +78,68 @@ import ToolCard from "@/components/cards/tool-card.astro";
       </button>
     </div>
 
-    <!-- Lista di tool -->
-    <div
-      class="z-50 grid items-stretch w-full grid-cols-1 my-8 gap-7 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3"
-    >
-      {tools.map((tool) => (
-        <ToolCard
-          name={tool.name}
-          description={tool.description}
-          image={tool.image}
-          url={tool.url}
-        />
-      ))}
+    <!-- Sezione Tools Custom -->
+    <div class="mb-16">
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-2xl font-heading">I Nostri Tools</h2>
+        <div class="h-px flex-1 bg-neutral-200 dark:bg-neutral-700"></div>
+      </div>
+      <div class="grid items-stretch w-full grid-cols-1 gap-7 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {customTools.map((tool) => (
+          <div class={`group relative overflow-hidden rounded-xl border border-neutral-200 bg-white shadow-md transition-all hover:shadow-lg dark:border-neutral-800 dark:bg-neutral-900 ${tool.enabled ? '' : 'opacity-50 pointer-events-none'}`}>
+            <a href={tool.enabled ? tool.url : '#'} class="block p-6">
+              <div class="flex flex-col h-full">
+                <h3 class="font-heading text-xl mb-2 group-hover:text-blue-500 transition-colors">
+                  {tool.name}
+                </h3>
+                <p class="text-muted-foreground text-sm flex-grow">
+                  {tool.description}
+                </p>
+                {tool.enabled ? (
+                  <div class="mt-4 flex items-center text-sm text-blue-500">
+                    Prova ora
+                    <svg
+                      class="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                ) : (
+                    <div class="mt-4 bg-black text-white text-xs px-2 py-1 rounded max-w-max">
+                    Coming Soon
+                    </div>
+                  )}
+              </div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Sezione Tools Esterni -->
+    <div>
+      <div class="flex items-center gap-4 mb-8">
+        <h2 class="text-2xl font-heading">Tools Esterni</h2>
+        <div class="h-px flex-1 bg-neutral-200 dark:bg-neutral-700"></div>
+      </div>
+      <div class="grid items-stretch w-full grid-cols-1 gap-7 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {tools.map((tool) => (
+          <ToolCard
+            name={tool.name}
+            description={tool.description}
+            image={tool.image}
+            url={tool.url}
+          />
+        ))}
+      </div>
     </div>
   </section>
 </MainLayout>

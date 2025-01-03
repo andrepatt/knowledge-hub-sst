@@ -53,19 +53,19 @@ export const infos: InfoLdg[] = [
 
 export const features = [
   {
-    title: "Gestione Progetti",
-    description: "Strumenti e risorse per la gestion dei progetti.",
-    link: "#",
+    title: "Progetti in corso",
+    description: "Progetti attivi e in fase di sviluppo da parte della struttura SST.",
+    link: "/projects",
   },
   {
     title: "Standard Architetturali",
     description: "Linee guida per progettare e sviluppare soluzioni scalabili e sicure.",
-    link: "#",
+    link: "/guides/standard-architetturali",
   },
   {
     title: "Mappa Applicativa",
     description: "Visualizza tutte le applicazioni sviluppate da SST.",
-    link: "#",
+    link: "/apps",
   },
   {
     title: "Piattaforme Tecnologiche",
@@ -75,12 +75,12 @@ export const features = [
   {
     title: "Formazione e Certificazioni",
     description: "Approfondisci competenze tecniche con corsi e tutorial dedicati.",
-    link: "#",
+    link: "/courses",
   },
   {
     title: "Knowledge Base",
     description: "Accesso rapido a guide, manuali e documentazione.",
-    link: "#",
+    link: "/docs",
   },
 ];
 
