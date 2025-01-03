@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build-local": "astro build && npx pagefind --site dist",
-    "build": "astro build && npx pagefind --site dist",
+    "build": "astro build && npx pagefind --site .vercel/output/static",
     "preview": "astro preview",
     "astro": "astro"
   },
