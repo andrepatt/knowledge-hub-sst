@@ -11,9 +11,13 @@ import { siteConfig } from "@/config/site";
         aria-hidden="true"
         class="absolute inset-0 -z-10 grid grid-cols-2 -space-x-52 opacity-40"
     >
-        <div class="blur-[60px] h-36 bg-gradient-to-br from-[#006fb1] to-[#2f8a81]">
+        <div
+            class="blur-[60px] h-36 bg-gradient-to-br from-[#006fb1] to-[#2f8a81]"
+        >
         </div>
-        <div class="blur-[60px] h-24 bg-gradient-to-r from-[#3d4f96] to-[#006fb1]">
+        <div
+            class="blur-[60px] h-24 bg-gradient-to-r from-[#3d4f96] to-[#006fb1]"
+        >
         </div>
     </div>
 
@@ -24,7 +28,11 @@ import { siteConfig } from "@/config/site";
                 <a
                     href="/releases"
                     class={cn(
-                        buttonVariants({ variant: "outline", size: "sm", rounded: "full" }),
+                        buttonVariants({
+                            variant: "outline",
+                            size: "sm",
+                            rounded: "full",
+                        }),
                         "px-3",
                     )}
                     target="_blank"
@@ -44,11 +52,29 @@ import { siteConfig } from "@/config/site";
                 </h1>
 
                 <div class="space-y-3 max-w-md">
-                    <p class="text-balance leading-normal text-muted-foreground sm:text-base sm:leading-7">
-                        Accedi a risorse, documentazione, guide e strumenti utili.
+                    <p
+                        class="text-balance leading-normal text-muted-foreground sm:text-base sm:leading-7"
+                    >
+                        Accedi a risorse, documentazione, guide e strumenti
+                        utili.
                     </p>
-                    <p class="text-balance font-semibold text-lg pt-2">
-                        Tutto in un unico posto.
+                    <p
+                        class="text-balance font-semibold text-2xl pt-2 flex items-center gap-2"
+                    >
+                        Tutto in un unico posto
+                        <a
+                            href="/ai"
+                            class="inline-flex items-center gap-1 text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500 transition-all duration-300 ease-in-out transform hover:from-green-500 hover:to-blue-600 hover:scale-105"
+                            style={{
+                                marginLeft: "20px", // Maggiore distanza a sinistra
+                            }}
+                        >
+                            ASK AI
+                            <Icon 
+                                name="lucide:brain" 
+                                class="size-5 text-green-500 font-bold transition-colors duration-300 ease-in-out hover:text-blue-500" 
+                            />
+                        </a>
                     </p>
                 </div>
 
@@ -76,14 +102,19 @@ import { siteConfig } from "@/config/site";
                             "px-4",
                         )}
                     >
-                        <span class="hidden sm:inline-block text-black dark:text-white">Vai Alla Knowledge Base</span>
+                        <span
+                            class="hidden sm:inline-block text-black dark:text-white"
+                            >Vai Alla Knowledge Base</span
+                        >
                         <Icon name="lucide:arrow-right" class="ml-2 size-4" />
                     </a>
                 </div>
             </div>
 
             <!-- Image Column -->
-            <div class="relative h-[300px] w-full perspective sm:h-[350px] lg:h-[400px]">
+            <div
+                class="relative h-[300px] w-full perspective sm:h-[350px] lg:h-[400px]"
+            >
                 <div class="image-container">
                     <img
                         src="/images/banner-hero.svg"
