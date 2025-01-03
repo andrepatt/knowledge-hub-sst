@@ -1,7 +1,7 @@
 ---
 import BaseHead from "@/components/layout/base-head.astro";
 import TailwindIndicator from "@/components/tailwind-indicator.astro";
-// ...
+import Analytics from '@vercel/analytics/astro';
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
@@ -21,11 +21,12 @@ const { title, description, bodyClass } = Astro.props;
     <script type="module">
       await import('/pagefind/pagefind-highlight.js');
       new PagefindHighlight({ highlightParam: "highlight" });
-  </script>
+    </script>
   </head>
   <body class={cn("flex flex-col min-h-screen", bodyClass)}>
     <slot />
     <TailwindIndicator />
     <Toaster richColors client:only="react" />
+    <Analytics />
   </body>
 </html>
